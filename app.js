@@ -1,12 +1,9 @@
 const express = require('express');
 const app = express();
-
 const hostname = "localhost";
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
-});
+app.use(express.static(__dirname + '/public'));
 
 // Query String Parameters
 // /greet?name=jane+doe
